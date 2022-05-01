@@ -1,0 +1,7 @@
+# Ignore Roblox files
+*.rbxlx
+*.rbxmx
+*.rbxm
+*.rbxl
+# Added by cargo
+/target
