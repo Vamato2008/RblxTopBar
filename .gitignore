@@ -3,5 +3,3 @@
 *.rbxmx
 *.rbxm
 *.rbxl
-# Added by cargo
-/target

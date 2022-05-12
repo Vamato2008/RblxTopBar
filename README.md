@@ -1,8 +1,8 @@
-# RblxTopBar v0.0.1 #
+# RblxTopBar v0.0.2 #
 
 Roblox tool to easily create image buttons on the top bar!<br>
 Still in development with future updates and bugs to fix!
-<br><br>
+<br>
 
 # Getting started
 
@@ -17,32 +17,42 @@ https://www.roblox.com/library/9517909355/
 
 # How to use
 
-First you require the module and create a button object
+You can go to the [docs page](docs) and read the instructions of all the versions.
+
+## Newest version (v0.0.2)
+
+Since in this version I rework the entire module, the creating a button is now done by the following code:
 ```lua
-local button = require(script.TopBar)()
+local module = require(script.TopBar) --require the module
+local button = module.new(
+   {  --parameters
+      ["Name"] = "Name", --button name
+      ["IconId"] = 0, --icon id
+   }
+)
 ```
-Then you can set button properties using this functions
+The button object has the following functions:
 ```lua
-local button = require(script.TopBar)()
-button.SetIconID(id)
-button.Rename(name)
-button.ResizeIcon(UDim2.new())
---reset size to default
-button.ResetSize()
+button:resizeIcon(size:Udim2) --set the icon size
+button:resetSize() --reset the icon size to default
+button:setIconId(id:number) --set the icon id
 ```
-And finally you can connect some functions to the button!
+Finally you can connect some events to the button!
 ```lua
-local button = require(script.TopBar)()
-button.Hover:Connect(function()
-	--on Hover function
+button.Hover:connect(function()
+   --on Hover function
 end)
-button.UnHover:Connect(function()
-	--on UnHover function
+
+button.UnHover:connect(function()
+   --on UnHover function
 end)
-button.Clicked1:Connect(function()
-	--MouseButton1 click event
+
+button.Click1:connect(function()
+   --MouseButton1 click event
 end)
-button.Clicked2:Connect(function()
-	--MouseButton2 click event
+
+button.Click2:connect(function()
+   --MouseButton2 click event
 end)
 ```
+Code examples are available in the [documentation page](docs/Version002.md).
